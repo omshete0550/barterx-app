@@ -4,7 +4,10 @@ import { Colors } from "../../constants/Colors";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../configs/FirebaseConfig";
 import CategoryCard from "../Home/CategoryCard";
+import { useRouter } from "expo-router";
 export default function Category() {
+  const router = useRouter();
+
   const [categoryList, setCategoryList] = useState([]);
 
   const getCategoryList = async () => {
@@ -55,7 +58,9 @@ export default function Category() {
           <CategoryCard
             category={item}
             key={index}
-            onCategoryPress={(category) => console.log(category)}
+            onCategoryPress={(category) =>
+              router.push("/productlist/" + item.name)
+            }
           />
         )}
       />
