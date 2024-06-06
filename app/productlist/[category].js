@@ -19,7 +19,7 @@ export default function ProductListByCategory() {
         const querySnapshot = await getDocs(q);
 
         querySnapshot.forEach((doc) => {
-            setProductList((prev) => [...prev, doc.data()]);
+            setProductList((prev) => [...prev, { id: doc?.id, ...doc.data() }]);
         })
 
         setLoadings(false);
