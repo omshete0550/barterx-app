@@ -14,7 +14,7 @@ export default function ProductCard() {
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc) => {
-      setProductList((prev) => [...prev, doc.data()]);
+      setProductList((prev) => [...prev, { id: doc.id, ...doc.data() }]);
     });
   };
 
@@ -38,11 +38,12 @@ export default function ProductCard() {
             marginTop: 10,
             fontSize: 20,
             fontFamily: "outfit-bold",
+            color: "#fff",
           }}
         >
           Popular Products
         </Text>
-        <Text style={{ color: Colors.PRIMARY, fontFamily: "outfit-medium" }}>
+        <Text style={{ color: Colors.orange, fontFamily: "outfit-medium" }}>
           View All
         </Text>
       </View>

@@ -27,6 +27,7 @@ export default function CategoryCard({ category, onCategoryPress }) {
             textAlign: "center",
             fontSize: 12,
             marginTop: 5,
+            color: '#fff'
           }}
         >
           {category.name}

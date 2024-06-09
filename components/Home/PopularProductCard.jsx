@@ -1,14 +1,18 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "../../constants/Colors";
+import { useRouter } from "expo-router";
 
 export default function PopularProductCard({ product }) {
+  const router = useRouter();
+
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => router.push("/productdetail/" + product.id)}
       style={{
         marginLeft: 20,
         padding: 10,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: Colors.GRAY,
         borderRadius: 15,
       }}
     >
@@ -18,12 +22,14 @@ export default function PopularProductCard({ product }) {
           width: 250,
           height: 180,
           borderRadius: 15,
-          backgroundColor: '#f3f3f3'
+          backgroundColor: "#f3f3f3",
         }}
       />
 
       <View style={{ marginTop: 7 }}>
-        <Text style={{ fontFamily: "outfit-bold", fontSize: 17 }}>
+        <Text
+          style={{ fontFamily: "outfit-bold", fontSize: 17, color: "#fff" }}
+        >
           {product.name}
         </Text>
         <Text
@@ -31,13 +37,13 @@ export default function PopularProductCard({ product }) {
             fontFamily: "outfit",
             fontSize: 13,
             marginTop: 5,
-            color: Colors.GRAY,
+            color: Colors.GOLD,
           }}
         >
           Owner: {product.owner}
         </Text>
         <Text
-          style={{ fontFamily: "outfit", fontSize: 13, color: Colors.GRAY }}
+          style={{ fontFamily: "outfit", fontSize: 13, color: Colors.GOLD }}
         >
           Required: {product.barterProduct}
         </Text>
@@ -47,36 +53,39 @@ export default function PopularProductCard({ product }) {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            alignItems: 'center',
+            alignItems: "center",
             marginTop: 15,
           }}
         >
           <Text
             style={{
               fontFamily: "outfit",
-              backgroundColor: '#fb5c36',
+              backgroundColor: Colors.blue,
               color: "#fff",
               fontSize: 13,
               padding: 3,
               borderRadius: 5,
               width: 50,
               height: 25,
-              textAlign: 'center',
+              textAlign: "center",
             }}
           >
             {product.category}
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              borderRadius: 15,
+            }}
+          >
             <Text
               style={{
                 fontFamily: "outfit-bold",
-                backgroundColor: Colors.PRIMARY,
+                backgroundColor: Colors.orange,
                 color: "#fff",
                 fontSize: 15,
                 paddingHorizontal: 25,
                 paddingVertical: 10,
-                borderRadius: 10,
-                
+                borderRadius: 15
               }}
             >
               Barter Now
@@ -84,6 +93,6 @@ export default function PopularProductCard({ product }) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

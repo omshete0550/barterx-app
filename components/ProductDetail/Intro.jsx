@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { Colors } from "../../constants/Colors";
 
 export default function Intro({ product }) {
   const router = useRouter();
@@ -34,56 +35,32 @@ export default function Intro({ product }) {
       <View
         style={{
           padding: 20,
-          backgroundColor: "#fff",
+          // backgroundColor: "#fff",
           borderTopLeftRadius: 25,
           borderTopRightRadius: 25,
-          marginTop: -15,
+          marginTop: -10,
         }}
       >
         <Text
           style={{
             fontSize: 26,
             fontFamily: "outfit-bold",
+            color: Colors.GOLD,
           }}
         >
           {product?.name}
         </Text>
-        {/* <Text
-          style={{
-            fontSize: 15,
-            marginTop: 5,
-            fontFamily: "outfit",
-          }}
-        >
-          {product?.about}
-        </Text> */}
+
         <Text
           style={{
             fontSize: 15,
             marginTop: 5,
             fontFamily: "outfit",
+            color: '#fff'
           }}
         >
           Onwer: {product?.owner}
         </Text>
-        {/* <Text
-          style={{
-            fontSize: 15,
-            marginTop: 5,
-            fontFamily: "outfit",
-          }}
-        >
-          Required: {product?.barterProduct}
-        </Text>
-        <Text
-          style={{
-            fontSize: 15,
-            marginTop: 5,
-            fontFamily: "outfit",
-          }}
-        >
-          Condition: {product?.condition}
-        </Text> */}
       </View>
     </View>
   );

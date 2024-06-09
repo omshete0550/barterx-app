@@ -12,12 +12,12 @@ export default function ProductListCard({ product }) {
 
   return (
     <TouchableOpacity
-      onPress={() => router.push('/productdetail/' + product.id)}
+      onPress={() => router.push("/productdetail/" + product.id)}
       style={{
         padding: 10,
         margin: 10,
         borderRadius: 15,
-        backgroundColor: "#fff",
+        backgroundColor: Colors.GRAY,
         display: "flex",
         flexDirection: "row",
         gap: 10,
@@ -41,7 +41,7 @@ export default function ProductListCard({ product }) {
           style={{
             position: "absolute",
             right: 0,
-            backgroundColor: "#fb5c36",
+            backgroundColor: Colors.orange,
             padding: 3,
             color: "#fff",
             borderRadius: 5,
@@ -53,6 +53,7 @@ export default function ProductListCard({ product }) {
           style={{
             fontFamily: "outfit-bold",
             fontSize: 18,
+            color: Colors.GOLD,
           }}
         >
           {product.name}
@@ -60,7 +61,7 @@ export default function ProductListCard({ product }) {
         <Text
           style={{
             fontFamily: "outfit",
-            color: Colors.GRAY,
+            color: "#fff",
           }}
         >
           {getFirst10Words(product.about)}
@@ -68,6 +69,7 @@ export default function ProductListCard({ product }) {
         <Text
           style={{
             fontFamily: "outfit-medium",
+            color: "#fff",
           }}
         >
           Owner: {product.owner}
@@ -75,6 +77,7 @@ export default function ProductListCard({ product }) {
         <Text
           style={{
             fontFamily: "outfit-medium",
+            color: "#fff",
           }}
         >
           Required: {product.barterProduct}

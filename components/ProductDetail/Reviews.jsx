@@ -38,13 +38,14 @@ export default function Reviews({ product }) {
     <View
       style={{
         padding: 20,
-        backgroundColor: "#fff",
+        // backgroundColor: "#fff",
       }}
     >
       <Text
         style={{
           fontFamily: "outfit-bold",
           fontSize: 20,
+          color: "#fff",
         }}
       >
         Reviews
@@ -67,6 +68,7 @@ export default function Reviews({ product }) {
             borderRadius: 10,
             borderColor: Colors.GRAY,
             textAlignVertical: "top",
+            color: "#fff",
           }}
         />
 
@@ -74,7 +76,7 @@ export default function Reviews({ product }) {
           disabled={!userInput}
           style={{
             marginTop: 10,
-            backgroundColor: Colors.PRIMARY,
+            backgroundColor: Colors.orange,
             padding: 10,
             borderRadius: 6,
           }}
@@ -94,17 +96,19 @@ export default function Reviews({ product }) {
 
       <View>
         {product?.reviews?.map((item, index) => (
-          <View style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 10,
-            alignItems: "center",
-            marginTop: 10,
-            borderWidth: 1,
-            borderColor: Colors.GRAY,
-            padding: 10,
-            borderRadius: 15
-          }}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 10,
+              alignItems: "center",
+              marginTop: 10,
+              borderWidth: 1,
+              borderColor: Colors.GRAY,
+              padding: 10,
+              borderRadius: 15,
+            }}
+          >
             <Image
               source={{ uri: item?.userImage }}
               style={{
@@ -116,18 +120,23 @@ export default function Reviews({ product }) {
             <View
               style={{
                 display: "flex",
-                gap: 5
+                gap: 5,
               }}
             >
-              <Text style={{
-                fontFamily: 'outfit-medium'
-              }}>{item.username}</Text>
+              <Text
+                style={{
+                  fontFamily: "outfit-medium",
+                  color: "#fff",
+                }}
+              >
+                {item.username}
+              </Text>
               <Rating
                 imageSize={20}
                 ratingCount={item.rating}
                 style={{ alignItems: "flex-start" }}
               />
-              <Text>{item.comment}</Text>
+              <Text style={{ color: "#fff" }}>{item.comment}</Text>
             </View>
           </View>
         ))}

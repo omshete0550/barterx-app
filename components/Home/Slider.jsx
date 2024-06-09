@@ -27,7 +27,8 @@ export default function Slider() {
           fontSize: 20,
           paddingLeft: 20,
           paddingTop: 20,
-          marginBottom: 5
+          marginBottom: 10,
+          color: '#fff'
         }}
       >
         #Special For You

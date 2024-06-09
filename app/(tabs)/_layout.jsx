@@ -2,14 +2,19 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";
-import {Colors} from '../../constants/Colors'
+import { Colors } from "../../constants/Colors";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.PRIMARY
+        tabBarActiveTintColor: Colors.GOLD,
+        tabBarStyle: {
+          backgroundColor: Colors.GRAY,
+          borderTopLeftRadius: 25,
+          borderTopRightRadius: 25,
+        },
       }}
     >
       <Tabs.Screen

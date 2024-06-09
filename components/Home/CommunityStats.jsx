@@ -8,13 +8,18 @@ export default function CommunityStats() {
     <View
       style={{
         padding: 20,
+        marginTop: 30,
+        backgroundColor: Colors.GRAY,
+        borderRadius: 18
       }}
     >
       <Text
         style={{
           marginTop: 10,
-          fontSize: 20,
+          fontSize: 25,
           fontFamily: "outfit-bold",
+          color: '#fff',
+          textAlign: 'center'
         }}
       >
         Community Stats
@@ -32,7 +37,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -40,6 +45,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Number of Businesses
@@ -57,7 +63,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -65,6 +71,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Total Barter Transaction Volume
@@ -81,7 +88,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -89,6 +96,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Total Cash Saved By Businesses
@@ -106,7 +114,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -114,6 +122,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Total Cash Saved By Charities
@@ -130,7 +139,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -138,6 +147,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Number of Charities Supported
@@ -155,7 +165,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.PRIMARY,
+              color: Colors.GOLD,
             }}
           />
           <Text
@@ -163,6 +173,7 @@ export default function CommunityStats() {
               fontSize: 15,
               marginTop: 10,
               fontFamily: "outfit-medium",
+              color: "#fff",
             }}
           >
             Total Barter Donations by Businesses

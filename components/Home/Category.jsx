@@ -5,7 +5,7 @@ import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../configs/FirebaseConfig";
 import CategoryCard from "../Home/CategoryCard";
 import { useRouter } from "expo-router";
-export default function Category() {
+export default function Category({ explore, onCategorySelect }) {
   const router = useRouter();
 
   const [categoryList, setCategoryList] = useState([]);
@@ -20,34 +20,45 @@ export default function Category() {
     });
   };
 
+  const onCategoryPressHandler = (item) => {
+    if (!explore) {
+      router.push("/productlist/" + item.name);
+    } else {
+      onCategorySelect(item.name);
+    }
+  };
+
   useEffect(() => {
     getCategoryList();
   }, []);
 
   return (
     <View>
-      <View
-        style={{
-          padding: 20,
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Text
+      {!explore && (
+        <View
           style={{
-            marginTop: 10,
-            fontSize: 20,
-            fontFamily: "outfit-bold",
+            padding: 20,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          Category
-        </Text>
-        <Text style={{ color: Colors.PRIMARY, fontFamily: "outfit-medium" }}>
-          View All
-        </Text>
-      </View>
+          <Text
+            style={{
+              marginTop: 10,
+              fontSize: 20,
+              fontFamily: "outfit-bold",
+              color: "#fff",
+            }}
+          >
+            Category
+          </Text>
+          <Text style={{ color: Colors.orange, fontFamily: "outfit-medium" }}>
+            View All
+          </Text>
+        </View>
+      )}
 
       <FlatList
         data={categoryList}
@@ -58,9 +69,7 @@ export default function Category() {
           <CategoryCard
             category={item}
             key={index}
-            onCategoryPress={(category) =>
-              router.push("/productlist/" + item.name)
-            }
+            onCategoryPress={(category) => onCategoryPressHandler(item)}
           />
         )}
       />

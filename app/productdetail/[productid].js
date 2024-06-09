@@ -40,9 +40,11 @@ export default function ProductDetail() {
     }
 
     return (
-        <ScrollView>
+        <ScrollView >
             {product && (
-                <View>
+                <View style={{
+                    backgroundColor: Colors.bg
+                }}>
                     {/* Intro */}
                     <Intro product={product} />
 

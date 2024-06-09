@@ -6,7 +6,7 @@ export default function About({ product }) {
     <View
       style={{
         padding: 20,
-        backgroundColor: "#FFFFFF",
+        // backgroundColor: "#FFFFFF",
         // height: "100%",
       }}
     >
@@ -14,6 +14,7 @@ export default function About({ product }) {
         style={{
           fontFamily: "outfit-bold",
           fontSize: 20,
+          color: '#fff'
         }}
       >
         About
@@ -24,6 +25,7 @@ export default function About({ product }) {
           marginTop: 10,
           lineHeight: 25,
           fontFamily: "outfit",
+          color: '#fff'
         }}
       >
         {product?.about}
@@ -33,6 +35,7 @@ export default function About({ product }) {
           fontSize: 15,
           marginTop: 10,
           fontFamily: "outfit-medium",
+          color: '#fff'
         }}
       >
         Required: {product?.barterProduct}
@@ -42,6 +45,7 @@ export default function About({ product }) {
           fontSize: 15,
           marginTop: 5,
           fontFamily: "outfit-medium",
+          color: '#fff'
         }}
       >
         Condition: {product?.condition}

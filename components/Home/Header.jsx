@@ -11,7 +11,7 @@ export default function Header() {
       style={{
         padding: 20,
         paddingTop: 40,
-        backgroundColor: Colors.PRIMARY,
+        backgroundColor: Colors.GRAY,
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
       }}

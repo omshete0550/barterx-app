@@ -8,6 +8,7 @@ import {
   Share,
 } from "react-native";
 import React from "react";
+import { Colors } from "../../constants/Colors";
 
 export default function ActionButton({ product }) {
   const actionButtonMenu = [
@@ -51,7 +52,7 @@ export default function ActionButton({ product }) {
     Linking.openURL(item.url);
   };
   return (
-    <View style={{ padding: 20, backgroundColor: "#fff" }}>
+    <View style={{ padding: 20 }}>
       <FlatList
         data={actionButtonMenu}
         numColumns={4}
@@ -63,9 +64,12 @@ export default function ActionButton({ product }) {
               style={{
                 width: 50,
                 height: 50,
+                backgroundColor: Colors.GRAY,
+                padding: 15,
+                borderRadius: 99
               }}
             />
-            <Text style={{ fontFamily: "outfit-medium", textAlign: "center" }}>
+            <Text style={{ fontFamily: "outfit-medium", textAlign: "center", color: '#fff', marginTop: 5 }}>
               {item.name}
             </Text>
           </TouchableOpacity>

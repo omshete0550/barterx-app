@@ -28,14 +28,19 @@ export default function ProductListByCategory() {
     useEffect(() => {
         navigation.setOptions({
             headerShown: true,
-            headerTitle: category
+            headerTitle: category,
+            headerStyle: { backgroundColor: Colors.bg },
+            headerTitleStyle: { color: '#fff' }
         });
 
         getProductListByCategory();
     }, [])
 
     return (
-        <View>
+        <View style={{
+            backgroundColor: Colors.bg,
+            height: '100%',
+        }}>
             {productList?.length > 0 && loadings == false ? <FlatList
                 data={productList}
                 onRefresh={getProductListByCategory}
