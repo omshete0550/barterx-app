@@ -8,6 +8,7 @@ import Intro from '../../components/ProductDetail/Intro';
 import ActionButton from '../../components/ProductDetail/ActionButton';
 import About from '../../components/ProductDetail/About';
 import Reviews from '../../components/ProductDetail/Reviews';
+import BarterProductList from '../../components/ProductDetail/BarterProductList';
 
 export default function ProductDetail() {
     const { productid } = useLocalSearchParams();
@@ -53,6 +54,24 @@ export default function ProductDetail() {
 
                     {/* About Section */}
                     <About product={product} />
+
+
+                    {/* Barter Product Table */}
+                    <View style={{
+                        padding: 20
+                    }} >
+                        <Text
+                            style={{
+                                fontFamily: "outfit-bold",
+                                fontSize: 20,
+                                color: "#fff",
+                                marginBottom: 10
+                            }}
+                        >
+                            Barter Product
+                        </Text>
+                        <BarterProductList />
+                    </View>
 
                     {/* Reviews */}
                     <Reviews product={product} />

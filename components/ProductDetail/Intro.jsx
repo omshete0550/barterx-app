@@ -20,9 +20,9 @@ export default function Intro({ product }) {
         }}
       >
         <TouchableOpacity onPress={() => router.back()}>
-          <Ionicons name="arrow-back-circle" size={40} color="black" />
+          <Ionicons name="arrow-back-circle" size={40} color='white' />
         </TouchableOpacity>
-        <Ionicons name="heart-outline" size={40} color="black" />
+        <Ionicons name="heart" size={40} color='white' />
       </View>
       <Image
         source={{ uri: product?.imageUrl }}
@@ -56,7 +56,7 @@ export default function Intro({ product }) {
             fontSize: 15,
             marginTop: 5,
             fontFamily: "outfit",
-            color: '#fff'
+            color: "#fff",
           }}
         >
           Onwer: {product?.owner}

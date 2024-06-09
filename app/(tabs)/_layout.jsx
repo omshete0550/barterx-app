@@ -12,8 +12,19 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors.GOLD,
         tabBarStyle: {
           backgroundColor: Colors.GRAY,
-          borderTopLeftRadius: 25,
-          borderTopRightRadius: 25,
+          borderRadius: 20,
+          position: "absolute",
+          bottom: 10,
+          left: 10,
+          right: 10,
+          height: 65,
+          paddingBottom: 10,
+          paddingTop: 10,
+          elevation: 5,
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 5 },
+          shadowOpacity: 0.3,
+          shadowRadius: 10,
         },
       }}
     >

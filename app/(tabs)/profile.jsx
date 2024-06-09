@@ -17,6 +17,7 @@ export default function profile() {
         style={{
           fontFamily: "outfit-bold",
           fontSize: 30,
+          color: '#fff'
         }}
       >
         Profile
