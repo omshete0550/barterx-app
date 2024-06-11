@@ -1,5 +1,6 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { Colors } from "../../constants/Colors";
 
 export default function About({ product }) {
   return (
@@ -14,7 +15,7 @@ export default function About({ product }) {
         style={{
           fontFamily: "outfit-bold",
           fontSize: 20,
-          color: '#fff'
+          color: "#fff",
         }}
       >
         About
@@ -25,31 +26,60 @@ export default function About({ product }) {
           marginTop: 10,
           lineHeight: 25,
           fontFamily: "outfit",
-          color: '#fff'
+          color: "#fff",
         }}
       >
         {product?.about}
       </Text>
-      <Text
+      <View
         style={{
-          fontSize: 15,
-          marginTop: 10,
-          fontFamily: "outfit-medium",
-          color: '#fff'
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        Required: {product?.barterProduct}
-      </Text>
-      <Text
-        style={{
-          fontSize: 15,
-          marginTop: 5,
-          fontFamily: "outfit-medium",
-          color: '#fff'
-        }}
-      >
-        Condition: {product?.condition}
-      </Text>
+        <View>
+          <Text
+            style={{
+              fontSize: 15,
+              marginTop: 10,
+              fontFamily: "outfit-medium",
+              color: "#fff",
+            }}
+          >
+            Required: {product?.barterProduct}
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              marginTop: 5,
+              fontFamily: "outfit-medium",
+              color: "#fff",
+            }}
+          >
+            Condition: {product?.condition}
+          </Text>
+        </View>
+
+        <TouchableOpacity
+          style={{
+            backgroundColor: Colors.orange,
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+            borderRadius: 5,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "outfit-medium",
+              color: "#fff",
+            }}
+          >
+            Barter Now
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

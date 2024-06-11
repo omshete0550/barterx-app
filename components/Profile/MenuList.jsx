@@ -16,15 +16,28 @@ export default function MenuList() {
       icon: require("./../../assets/images/myProduct.png"),
       path: "",
     },
+
     {
       id: 3,
+      name: "Swapped Products",
+      icon: require("./../../assets/images/myProduct.png"),
+      path: "",
+    },
+    {
+      id: 4,
       name: "Share App",
       icon: require("./../../assets/images/share.png"),
       path: "",
     },
     {
-      id: 4,
+      id: 5,
       name: "Logout",
+      icon: require("./../../assets/images/logout.png"),
+      path: "",
+    },
+    {
+      id: 6,
+      name: "Settings",
       icon: require("./../../assets/images/logout.png"),
       path: "",
     },

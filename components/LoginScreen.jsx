@@ -51,7 +51,7 @@ export default function LoginScreen() {
           Your Ultimate{" "}
           <Text
             style={{
-              color: Colors.PRIMARY,
+              color: Colors.blue,
             }}
           >
             {" "}
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     color: Colors.GRAY,
   },
   button: {
-    backgroundColor: Colors.PRIMARY,
+    backgroundColor: Colors.orange,
     padding: 16,
     display: "flex",
     borderRadius: 99,
