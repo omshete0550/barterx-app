@@ -14,30 +14,30 @@ const BarterProductList = () => {
   const [items] = useState([
     {
       key: 1,
-      name: "Cupcake",
-      calories: 356,
-      fat: 16,
+      date: "20 Aug 2010",
+      user: "ABC",
+      item: "Study Table",
       price: 100,
     },
     {
       key: 2,
-      name: "Eclair",
-      calories: 262,
-      fat: 16,
+      date: "09 July 2021",
+      user: "Alex",
+      item: "Study Table",
       price: 100,
     },
     {
       key: 3,
-      name: "Frozen yogurt",
-      calories: 159,
-      fat: 6,
+      date: "Cupcake",
+      user: "356",
+      item: "Study Table",
       price: 100,
     },
     {
       key: 4,
-      name: "Gingerbread",
-      calories: 305,
-      fat: 3.7,
+      date: "Cupcake",
+      user: "356",
+      item: "Study Table",
       price: 100,
     },
   ]);
@@ -99,7 +99,7 @@ const BarterProductList = () => {
           >
             Item
           </DataTable.Title>
-          <DataTable.Title
+          {/* <DataTable.Title
             textStyle={{
               color: Colors.GOLD,
               fontFamily: "outfit-bold",
@@ -108,7 +108,7 @@ const BarterProductList = () => {
             numeric
           >
             Price
-          </DataTable.Title>
+          </DataTable.Title> */}
         </DataTable.Header>
 
         {items.slice(from, to).map((item) => (
@@ -117,21 +117,21 @@ const BarterProductList = () => {
             style={{
               borderBottomColor: "#fff",
               borderBottomWidth: 1,
-            //   borderRadius: 10,
+              //   borderRadius: 10,
             }}
           >
             <DataTable.Cell textStyle={{ color: "#fff" }}>
-              {item.name}
+              {item.date}
             </DataTable.Cell>
             <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
-              {item.calories}
+              {item.user}
             </DataTable.Cell>
             <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
-              {item.fat}
+              {item.item}
             </DataTable.Cell>
-            <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
+            {/* <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
               {item.price}
-            </DataTable.Cell>
+            </DataTable.Cell> */}
           </DataTable.Row>
         ))}
 

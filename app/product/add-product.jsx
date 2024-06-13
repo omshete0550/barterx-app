@@ -83,6 +83,18 @@ export default function AddProduct() {
       .then((resp) => {
         getDownloadURL(imageRef).then(async (downloadUrl) => {
           saveProductDetail(downloadUrl);
+
+          // Reset fields
+          setProductName("");
+          setProductDesc("");
+          setDesiredProduct("");
+          setProductCondition("");
+          setProductCategory("");
+          setImage(null);
+          setSelectedDate(new Date());
+
+          // Navigate back
+          navigation.goBack();
         });
       });
 

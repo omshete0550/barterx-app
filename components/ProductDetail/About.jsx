@@ -1,8 +1,11 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "../../constants/Colors";
+import { useUser } from "@clerk/clerk-expo";
 
 export default function About({ product }) {
+  const { user } = useUser();
+
   return (
     <View
       style={{
@@ -62,23 +65,25 @@ export default function About({ product }) {
           </Text>
         </View>
 
-        <TouchableOpacity
-          style={{
-            backgroundColor: Colors.orange,
-            paddingVertical: 10,
-            paddingHorizontal: 20,
-            borderRadius: 5,
-          }}
-        >
-          <Text
+        {user?.primaryEmailAddress?.emailAddress != product?.email && (
+          <TouchableOpacity
             style={{
-              fontFamily: "outfit-medium",
-              color: "#fff",
+              backgroundColor: Colors.orange,
+              paddingVertical: 10,
+              paddingHorizontal: 20,
+              borderRadius: 5,
             }}
           >
-            Barter Now
-          </Text>
-        </TouchableOpacity>
+            <Text
+              style={{
+                fontFamily: "outfit-medium",
+                color: "#fff",
+              }}
+            >
+              Barter Now
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

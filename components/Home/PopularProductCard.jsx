@@ -65,7 +65,7 @@ export default function PopularProductCard({ product }) {
               fontSize: 13,
               padding: 3,
               borderRadius: 5,
-              width: 50,
+              width: 75,
               height: 25,
               textAlign: "center",
             }}
