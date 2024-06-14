@@ -72,7 +72,22 @@ export default function PopularProductCard({ product }) {
           >
             {product.category}
           </Text>
-          <TouchableOpacity
+          <Text
+            style={{
+              fontFamily: "outfit",
+              backgroundColor: Colors.orange,
+              color: "#fff",
+              fontSize: 13,
+              padding: 3,
+              borderRadius: 5,
+              width: 75,
+              height: 25,
+              textAlign: "center",
+            }}
+          >
+            {product.condition}
+          </Text>
+          {/* <TouchableOpacity
             style={{
               borderRadius: 15,
             }}
@@ -90,7 +105,7 @@ export default function PopularProductCard({ product }) {
             >
               Barter Now
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </TouchableOpacity>
