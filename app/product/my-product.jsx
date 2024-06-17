@@ -6,12 +6,14 @@ import { query } from "firebase/database";
 import { collection, getDocs, where } from "firebase/firestore";
 import { db } from "../../configs/FirebaseConfig";
 import ProductListCard from "../../components/ProductList/ProductListCard";
+import { useNavigation } from "expo-router";
 
 export default function MyProduct() {
   const { user } = useUser();
 
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
 
   const getUserProduct = async () => {
     setLoading(true);
@@ -32,6 +34,13 @@ export default function MyProduct() {
 
   useEffect(() => {
     user && getUserProduct();
+
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: "My Product",
+      headerStyle: { backgroundColor: Colors.GRAY },
+      headerTitleStyle: { color: "#fff" },
+    });
   }, [user]);
 
   return (

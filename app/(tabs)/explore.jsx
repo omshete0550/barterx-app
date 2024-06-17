@@ -27,7 +27,7 @@ export default function explore() {
       style={{
         padding: 20,
         backgroundColor: Colors.bg,
-        height: '100%'
+        height: "100%",
       }}
     >
       <Text
@@ -35,7 +35,7 @@ export default function explore() {
           fontFamily: "outfit-bold",
           fontSize: 30,
           marginTop: 30,
-          color: '#fff'
+          color: "#fff",
         }}
       >
         Explore More
@@ -51,7 +51,7 @@ export default function explore() {
           marginVertical: 10,
           marginTop: 15,
           borderRadius: 8,
-          marginBottom: 30
+          marginBottom: 30,
         }}
       >
         <FontAwesome name="search" size={24} color={Colors.PRIMARY} />

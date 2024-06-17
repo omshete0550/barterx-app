@@ -24,31 +24,30 @@ export default function MenuList() {
       icon: require("./../../assets/images/myProduct.png"),
       path: "/product/my-product/",
     },
-
     {
       id: 3,
-      name: "Swapped Products",
+      name: "Request Products",
       icon: require("./../../assets/images/myProduct.png"),
-      path: "",
+      path: "/product/barter-product/",
     },
     {
       id: 4,
+      name: "Swapped Products",
+      icon: require("./../../assets/images/myProduct.png"),
+      path: "/product/swapped-product/",
+    },
+    {
+      id: 5,
       name: "Share App",
       icon: require("./../../assets/images/share.png"),
       path: "share",
     },
     {
-      id: 5,
+      id: 6,
       name: "Logout",
       icon: require("./../../assets/images/logout.png"),
       path: "logout",
-    },
-    {
-      id: 6,
-      name: "Settings",
-      icon: require("./../../assets/images/logout.png"),
-      path: "",
-    },
+    }
   ];
 
   const router = useRouter();

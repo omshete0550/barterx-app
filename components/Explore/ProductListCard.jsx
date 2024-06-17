@@ -4,14 +4,18 @@ import { Colors } from "../../constants/Colors";
 import { useRouter } from "expo-router";
 
 export default function ProductListCard({ product }) {
+  const getFirst10Words = (text) => {
+    const words = text.split(" ");
+    return words.slice(0, 10).join(" ") + (words.length > 10 ? "..." : "");
+  };
+
   const router = useRouter();
   return (
     <TouchableOpacity
       onPress={() => router.push("/productdetail/" + product?.id)}
       style={{
         backgroundColor: Colors.GRAY,
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
+        borderRadius: 15,
         marginTop: 15,
       }}
     >
@@ -30,13 +34,18 @@ export default function ProductListCard({ product }) {
           padding: 10,
         }}
       >
-        <Text style={{ fontFamily: "outfit-bold", fontSize: 18, color: Colors.GOLD, marginBottom: 10 }}>
+        <Text
+          style={{
+            fontFamily: "outfit-bold",
+            fontSize: 18,
+            color: Colors.GOLD,
+            marginBottom: 10,
+          }}
+        >
           {product?.name}
         </Text>
-        <Text
-          style={{ fontFamily: "outfit", fontSize: 12, color: '#fff' }}
-        >
-          {product?.about}
+        <Text style={{ fontFamily: "outfit", fontSize: 12, color: "#fff" }}>
+          {getFirst10Words(product?.about)}
         </Text>
       </View>
     </TouchableOpacity>

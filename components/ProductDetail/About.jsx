@@ -26,6 +26,8 @@ export default function About({ product }) {
       }
     });
 
+  
+
     setProducts(productsArray);
   };
 
@@ -127,6 +129,7 @@ export default function About({ product }) {
           visible={modalVisible}
           products={products}
           onClose={closeModal}
+          productDetailName={product}
         />
       </View>
     </View>

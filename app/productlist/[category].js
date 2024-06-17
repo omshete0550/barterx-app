@@ -29,7 +29,7 @@ export default function ProductListByCategory() {
         navigation.setOptions({
             headerShown: true,
             headerTitle: category,
-            headerStyle: { backgroundColor: Colors.bg },
+            headerStyle: { backgroundColor: Colors.GRAY },
             headerTitleStyle: { color: '#fff' }
         });
 

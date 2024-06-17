@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,15 +7,74 @@ import {
   StyleSheet,
   Image,
   FlatList,
+  Alert,
 } from "react-native";
 import { Colors } from "../../constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { db } from "../../configs/FirebaseConfig";
+import { useUser } from "@clerk/clerk-expo";
 
-const ProductListModal = ({ visible, products, onClose }) => {
-  if (!visible) return null;
+const ProductListModal = ({
+  visible,
+  products,
+  onClose,
+  productDetailName,
+}) => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { user } = useUser();
+
+  const handleProductPress = (product) => {
+    setSelectedProduct(product);
+    Alert.alert(
+      "Confirm Swap",
+      `Do you want to swap ${product.name}?`,
+      [
+        {
+          text: "Cancel",
+          onPress: () => setSelectedProduct(null),
+          style: "cancel",
+        },
+        {
+          text: "OK",
+          onPress: () => handleConfirmSwap(product),
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
+  const handleConfirmSwap = async (selectedProduct) => {
+    try {
+      // Reference to the specific product document
+      const productRef = doc(db, "ProductList", productDetailName.id);
+
+      // Add the selected product to the swapList array of the clicked product
+      await updateDoc(productRef, {
+        swapList: arrayUnion({
+          id: selectedProduct.id,
+          name: selectedProduct.name,
+          barterProduct: selectedProduct.barterProduct,
+          imageUrl: selectedProduct.imageUrl,
+          ownerEmail: productDetailName.email, // Include owner's email
+          userEmail: user?.primaryEmailAddress?.emailAddress, // Include current user's email
+        }),
+      });
+
+      // Clear the selected product
+      setSelectedProduct(null);
+      Alert.alert("Success", `${selectedProduct.name} swapped successfully!`);
+    } catch (error) {
+      console.error("Error swapping product:", error);
+      Alert.alert("Error", "Failed to swap product. Please try again.");
+    }
+  };
 
   const renderProductItem = ({ item }) => (
-    <TouchableOpacity style={styles.productItem}>
+    <TouchableOpacity
+      style={styles.productItem}
+      onPress={() => handleProductPress(item)}
+    >
       <Image source={{ uri: item.imageUrl }} style={styles.productImage} />
       <View style={styles.productDetails}>
         <Text style={styles.productName}>{item.name}</Text>
@@ -33,6 +92,16 @@ const ProductListModal = ({ visible, products, onClose }) => {
     >
       <View style={styles.modalBackground}>
         <View style={styles.modalContent}>
+          <Text
+            style={{
+              fontFamily: "outfit-bold",
+              color: "#fff",
+              fontSize: 20,
+              marginBottom: 10,
+            }}
+          >
+            Your Products
+          </Text>
           <FlatList
             data={products}
             renderItem={renderProductItem}
@@ -60,7 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: "90%",
     maxHeight: "80%",
-    paddingVertical: 40,
+    paddingVertical: 30,
     paddingHorizontal: 15,
   },
   flatListContainer: {

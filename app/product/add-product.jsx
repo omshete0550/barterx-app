@@ -124,7 +124,7 @@ export default function AddProduct() {
     navigation.setOptions({
       headerShown: true,
       headerTitle: "Publish Product",
-      headerStyle: { backgroundColor: Colors.bg },
+      headerStyle: { backgroundColor: Colors.GRAY },
       headerTitleStyle: { color: "#fff" },
     });
 
