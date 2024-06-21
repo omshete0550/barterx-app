@@ -11,7 +11,7 @@ export default function PopularProductCard({ product }) {
       onPress={() => router.push("/productdetail/" + product.id)}
       style={{
         marginLeft: 20,
-        padding: 10,
+        padding: 15,
         backgroundColor: Colors.GRAY,
         borderRadius: 15,
       }}
@@ -19,31 +19,39 @@ export default function PopularProductCard({ product }) {
       <Image
         source={{ uri: product?.imageUrl }}
         style={{
-          width: 250,
-          height: 180,
-          borderRadius: 15,
-          backgroundColor: "#f3f3f3",
+          width: 280,
+          height: 190,
+          borderRadius: 10,
         }}
       />
 
-      <View style={{ marginTop: 7 }}>
+      <View style={{ marginTop: 10 }}>
         <Text
-          style={{ fontFamily: "outfit-bold", fontSize: 17, color: "#fff" }}
+          style={{
+            fontFamily: "outfit-bold",
+            fontSize: 18,
+            color: Colors.orange,
+          }}
         >
           {product.name}
         </Text>
         <Text
           style={{
             fontFamily: "outfit",
-            fontSize: 13,
+            fontSize: 14,
             marginTop: 5,
-            color: Colors.GOLD,
+            color: Colors.white,
           }}
         >
           Owner: {product.owner}
         </Text>
         <Text
-          style={{ fontFamily: "outfit", fontSize: 13, color: Colors.GOLD }}
+          style={{
+            fontFamily: "outfit",
+            fontSize: 14,
+            color: Colors.white,
+            marginTop: 2,
+          }}
         >
           Required: {product.barterProduct}
         </Text>
@@ -57,36 +65,53 @@ export default function PopularProductCard({ product }) {
             marginTop: 15,
           }}
         >
-          <Text
+          <View
             style={{
-              fontFamily: "outfit",
-              backgroundColor: Colors.blue,
-              color: "#fff",
-              fontSize: 13,
-              padding: 3,
+              backgroundColor: Colors.green,
               borderRadius: 5,
               width: 75,
               height: 25,
-              textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              flexDirection: "row",
+              padding: 5,
             }}
           >
-            {product.category}
-          </Text>
-          <Text
+            <Text
+              style={{
+                fontFamily: "outfit",
+                color: Colors.GRAY,
+                fontSize: 12,
+              }}
+            >
+              {product.category}
+            </Text>
+          </View>
+
+          <View
             style={{
-              fontFamily: "outfit",
               backgroundColor: Colors.orange,
-              color: "#fff",
-              fontSize: 13,
-              padding: 3,
               borderRadius: 5,
               width: 75,
               height: 25,
-              textAlign: "center",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              flexDirection: "row",
+              padding: 5,
             }}
           >
-            {product.condition}
-          </Text>
+            <Text
+              style={{
+                fontFamily: "outfit",
+                color: Colors.GRAY,
+                fontSize: 13,
+              }}
+            >
+              {product.condition}
+            </Text>
+          </View>
           {/* <TouchableOpacity
             style={{
               borderRadius: 15,

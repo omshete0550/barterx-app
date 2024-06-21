@@ -20,8 +20,10 @@ export default function Slider() {
   }, []);
 
   return (
-    <View>
-      <Text
+    <View style={{
+      marginTop: 30
+    }}>
+      {/* <Text
         style={{
           fontFamily: "outfit-bold",
           fontSize: 20,
@@ -32,7 +34,7 @@ export default function Slider() {
         }}
       >
         #Special For You
-      </Text>
+      </Text> */}
 
       <FlatList
         data={sliderList}

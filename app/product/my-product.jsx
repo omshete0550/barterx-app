@@ -61,14 +61,28 @@ export default function MyProduct() {
         My Products
       </Text>
 
-      <FlatList
-        refreshing={loading}
-        onRefresh={getUserProduct}
-        data={productList}
-        renderItem={({ item, index }) => (
-          <ProductListCard product={item} key={index} />
-        )}
-      />
+      {productList?.length > 0 && loading == false ? (
+        <FlatList
+          refreshing={loading}
+          onRefresh={getUserProduct}
+          data={productList}
+          renderItem={({ item, index }) => (
+            <ProductListCard product={item} key={index} />
+          )}
+        />
+      ) : (
+        <Text
+          style={{
+            fontSize: 30,
+            fontFamily: "outfit-bold",
+            color: Colors.GOLD,
+            textAlign: "center",
+            marginTop: "50%",
+          }}
+        >
+          No Product Posted Yet!
+        </Text>
+      )}
     </View>
   );
 }

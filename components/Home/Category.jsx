@@ -54,8 +54,8 @@ export default function Category({ explore, onCategorySelect }) {
           >
             Category
           </Text>
-          <Text style={{ color: Colors.orange, fontFamily: "outfit-medium" }}>
-            View All
+          <Text style={{ color: Colors.green, fontFamily: "outfit-medium", textDecorationLine: 1, fontSize: 16 }}>
+            See All
           </Text>
         </View>
       )}

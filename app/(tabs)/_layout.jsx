@@ -9,15 +9,15 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.GOLD,
+        tabBarActiveTintColor: Colors.green,
         tabBarStyle: {
           backgroundColor: Colors.GRAY,
           borderRadius: 20,
           position: "absolute",
-          bottom: 10,
-          left: 10,
-          right: 10,
-          height: 65,
+          // bottom: 10,
+          // left: 30,
+          // right: 30,
+          height: 75,
           paddingBottom: 10,
           paddingTop: 10,
           elevation: 5,

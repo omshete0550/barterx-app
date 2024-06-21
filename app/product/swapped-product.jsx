@@ -11,10 +11,12 @@ export default function SwappedProduct() {
   const { user } = useUser();
   const [productList, setProductList] = useState([]);
   const navigation = useNavigation();
+  const [loading, setLoading] = useState(false);
 
   const getUserSwappedProduct = async () => {
     try {
       setProductList([]);
+      setLoading(true);
       const q = query(
         collection(db, "SwappedProduct"),
         where("userEmail", "==", user?.primaryEmailAddress?.emailAddress)
@@ -25,6 +27,8 @@ export default function SwappedProduct() {
       querySnapShot.forEach((doc) => {
         setProductList((prev) => [...prev, doc.data()]);
       });
+
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching swapped products:", error);
     }
@@ -60,55 +64,71 @@ export default function SwappedProduct() {
       >
         Swapped Product
       </Text>
-
-      <FlatList
-        data={productList}
-        renderItem={({ item, index }) => (
-          <View
-            key={index}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: 20,
-              backgroundColor: Colors.GRAY,
-              padding: 15,
-              borderRadius: 15,
-            }}
-          >
-            <Image
-              source={{ uri: item?.productDetails?.imageUrl }}
+      {productList?.length > 0 && loading == false ? (
+        <FlatList
+          data={productList}
+          refreshing={loading}
+          onRefresh={getUserSwappedProduct}
+          renderItem={({ item, index }) => (
+            <View
+              key={index}
               style={{
-                width: 80,
-                height: 80,
-                borderRadius: 99,
+                display: "flex",
+                flexDirection: "row",
+                gap: 20,
+                backgroundColor: Colors.GRAY,
+                padding: 15,
+                borderRadius: 15,
+                marginBottom: 20,
               }}
-            />
+            >
+              <Image
+                source={{ uri: item?.swappedItem?.imageUrl }}
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: 10,
+                }}
+              />
 
-            <View>
-              <Text
-                style={{
-                  marginTop: 20,
-                  fontFamily: "outfit-medium",
-                  color: "#fff",
-                  fontSize: 16,
-                }}
-              >
-                Your Item: {item?.productDetails?.name}
-              </Text>
-              <Text
-                style={{
-                  marginTop: 5,
-                  fontFamily: "outfit-medium",
-                  color: "#fff",
-                  fontSize: 16,
-                }}
-              >
-                Swapped With: {item?.swappedItem?.name}
-              </Text>
+              <View>
+                <Text
+                  style={{
+                    marginTop: 20,
+                    fontFamily: "outfit-medium",
+                    color: "#fff",
+                    fontSize: 16,
+                  }}
+                >
+                  Your Item: {item?.productDetails?.name}
+                </Text>
+                <Text
+                  style={{
+                    marginTop: 5,
+                    fontFamily: "outfit-medium",
+                    color: "#fff",
+                    fontSize: 16,
+                  }}
+                >
+                  Swapped With: {item?.swappedItem?.name}
+                </Text>
+              </View>
             </View>
-          </View>
-        )}
-      />
+          )}
+        />
+      ) : (
+        <Text
+          style={{
+            fontSize: 30,
+            fontFamily: "outfit-bold",
+            color: Colors.GOLD,
+            textAlign: "center",
+            marginTop: "50%",
+          }}
+        >
+          No Product Swapped Yet!
+        </Text>
+      )}
     </View>
   );
 }

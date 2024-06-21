@@ -43,8 +43,8 @@ export default function ProductCard() {
         >
           Popular Products
         </Text>
-        <Text style={{ color: Colors.orange, fontFamily: "outfit-medium" }}>
-          View All
+        <Text style={{ color: Colors.green, fontFamily: "outfit-medium", textDecorationLine: 1, fontSize: 16 }}>
+          See All
         </Text>
       </View>
 

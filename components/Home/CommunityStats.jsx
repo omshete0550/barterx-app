@@ -9,6 +9,7 @@ export default function CommunityStats() {
       style={{
         padding: 20,
         marginTop: 30,
+        marginHorizontal: 20,
         backgroundColor: Colors.GRAY,
         borderRadius: 18
       }}
@@ -18,7 +19,7 @@ export default function CommunityStats() {
           marginTop: 10,
           fontSize: 25,
           fontFamily: "outfit-bold",
-          color: '#fff',
+          color: Colors.white,
           textAlign: 'center'
         }}
       >
@@ -37,7 +38,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text
@@ -63,7 +64,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text
@@ -88,7 +89,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text
@@ -114,7 +115,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text
@@ -139,7 +140,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text
@@ -165,7 +166,7 @@ export default function CommunityStats() {
             style={{
               fontSize: 20,
               fontFamily: "outfit-bold",
-              color: Colors.GOLD,
+              color: Colors.green,
             }}
           />
           <Text

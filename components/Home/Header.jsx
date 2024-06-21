@@ -12,8 +12,8 @@ export default function Header() {
         padding: 20,
         paddingTop: 40,
         backgroundColor: Colors.GRAY,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
+        borderBottomLeftRadius: 50,
+        borderBottomRightRadius: 50,
       }}
     >
       <View
@@ -68,18 +68,19 @@ export default function Header() {
           alignItems: "center",
           gap: 10,
           padding: 10,
-          backgroundColor: "#fff",
+          backgroundColor: Colors.lightGray,
           marginVertical: 10,
           marginTop: 15,
           borderRadius: 8,
         }}
       >
-        <FontAwesome name="search" size={24} color={Colors.PRIMARY} />
+        <FontAwesome name="search" size={24} color={Colors.white} />
         <TextInput
           placeholder="Search..."
           style={{
             fontFamily: "outfit",
             fontSize: 16,
+            color: Colors.white
           }}
         />
       </View>

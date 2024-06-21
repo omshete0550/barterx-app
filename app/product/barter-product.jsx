@@ -153,24 +153,26 @@ export default function BarterProduct() {
 
       // Create documents to add to the SwappedProduct collection
       const swappedProductData1 = {
-        userEmail: user?.primaryEmailAddress?.emailAddress,
+        userEmail: user?.primaryEmailAddress?.emailAddress, // omshete0550
         productId: productId,
-        productDetails: productData, // Include full product details
+        productDetails: productData, // sem 5
         swappedItem: {
-          name: swappedItem.name,
+          name: swappedItem.name, // sem 6
           imageUrl: swappedItem.imageUrl,
         },
         swappedWithUser: swappedItem.userEmail,
         timestamp: new Date(),
       };
 
+      console.log(productData);
+
       const swappedProductData2 = {
-        userEmail: swappedItem.userEmail,
+        userEmail: swappedItem.userEmail, // omshete012
         productId: swappedItem.id,
-        productDetails: barterProductData, // Include full barter product details
+        productDetails: barterProductData, // sem 6
         swappedItem: {
-          name: swappedItem.name,
-          imageUrl: swappedItem.imageUrl,
+          name: productData.name,
+          imageUrl: productData.imageUrl,
         },
         swappedWithUser: user?.primaryEmailAddress?.emailAddress,
         timestamp: new Date(),
@@ -217,127 +219,140 @@ export default function BarterProduct() {
       >
         BarterProduct
       </Text>
-
-      <FlatList
-        data={barterProductList}
-        refreshing={loading}
-        onRefresh={getBarterProduct}
-        renderItem={({ item }) => (
-          <View
-            style={{
-              marginBottom: 20,
-            }}
-          >
-            {item.swapList.map((swappedItem, index) => (
-              <View
-                key={index}
-                style={{
-                  marginTop: 5,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 20,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 15,
-                  borderRadius: 10,
-                  backgroundColor: Colors.GRAY,
-                  padding: 20,
-                }}
-              >
-                <Text
-                  style={{
-                    color: "#fff",
-                    fontSize: 18,
-                    fontFamily: "outfit-medium",
-                    textAlign: "center",
-                  }}
-                >
-                  Your Item: {item.name}
-                </Text>
-                <Image
-                  source={{ uri: swappedItem.imageUrl }}
-                  style={{
-                    height: 200,
-                    width: "100%",
-                    borderRadius: 8,
-                  }}
-                />
-                <View>
-                  <Text
-                    style={{
-                      color: "#fff",
-                      fontFamily: "outfit",
-                      fontSize: 16,
-                      marginBottom: 5,
-                    }}
-                  >
-                    Swapped with: {swappedItem.name}
-                  </Text>
-                  <Text
-                    style={{
-                      color: "#fff",
-                      fontFamily: "outfit",
-                      fontSize: 16,
-                    }}
-                  >
-                    Barter Product: {swappedItem.barterProduct}
-                  </Text>
-                </View>
+      {barterProductList?.length > 0 && loading == false ? (
+        <FlatList
+          data={barterProductList}
+          refreshing={loading}
+          onRefresh={getBarterProduct}
+          renderItem={({ item }) => (
+            <View
+              style={{
+                marginBottom: 20,
+              }}
+            >
+              {item.swapList.map((swappedItem, index) => (
                 <View
+                  key={index}
                   style={{
+                    marginTop: 5,
                     display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
+                    flexDirection: "column",
+                    gap: 20,
                     alignItems: "center",
-                    gap: 15,
+                    justifyContent: "center",
+                    marginBottom: 15,
+                    borderRadius: 10,
+                    backgroundColor: Colors.GRAY,
+                    padding: 20,
                   }}
                 >
-                  <TouchableOpacity
-                    onPress={() => handleAccept(item.id, swappedItem)}
+                  <Text
                     style={{
-                      paddingVertical: 10,
-                      paddingHorizontal: 20,
-                      backgroundColor: "green",
-                      borderRadius: 8,
+                      color: "#fff",
+                      fontSize: 18,
+                      fontFamily: "outfit-medium",
+                      textAlign: "center",
                     }}
                   >
+                    Your Item: {item.name}
+                  </Text>
+                  <Image
+                    source={{ uri: swappedItem.imageUrl }}
+                    style={{
+                      height: 200,
+                      width: "100%",
+                      borderRadius: 8,
+                    }}
+                  />
+                  <View>
                     <Text
                       style={{
                         color: "#fff",
-                        fontFamily: "outfit-medium",
+                        fontFamily: "outfit",
+                        fontSize: 16,
+                        marginBottom: 5,
                       }}
                     >
-                      Accept
+                      Swapped with: {swappedItem.name}
                     </Text>
-                  </TouchableOpacity>
+                    <Text
+                      style={{
+                        color: "#fff",
+                        fontFamily: "outfit",
+                        fontSize: 16,
+                      }}
+                    >
+                      Barter Product: {swappedItem.barterProduct}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                      gap: 15,
+                    }}
+                  >
+                    <TouchableOpacity
+                      onPress={() => handleAccept(item.id, swappedItem)}
+                      style={{
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        backgroundColor: "green",
+                        borderRadius: 8,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          color: "#fff",
+                          fontFamily: "outfit-medium",
+                        }}
+                      >
+                        Accept
+                      </Text>
+                    </TouchableOpacity>
 
-                  <TouchableOpacity
-                    onPress={() => handleDecline(item.id, swappedItem)}
-                    style={{
-                      paddingVertical: 10,
-                      paddingHorizontal: 20,
-                      backgroundColor: "red",
-                      borderRadius: 8,
-                    }}
-                  >
-                    <Text
+                    <TouchableOpacity
+                      onPress={() => handleDecline(item.id, swappedItem)}
                       style={{
-                        color: "#fff",
-                        fontFamily: "outfit-medium",
+                        paddingVertical: 10,
+                        paddingHorizontal: 20,
+                        backgroundColor: "red",
+                        borderRadius: 8,
                       }}
                     >
-                      Decline
-                    </Text>
-                  </TouchableOpacity>
+                      <Text
+                        style={{
+                          color: "#fff",
+                          fontFamily: "outfit-medium",
+                        }}
+                      >
+                        Decline
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
-              </View>
-            ))}
-          </View>
-        )}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={{ paddingBottom: 20 }}
-        showsVerticalScrollIndicator={false}
-      />
+              ))}
+            </View>
+          )}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={{ paddingBottom: 20 }}
+          showsVerticalScrollIndicator={false}
+        />
+      ) : (
+        <Text
+          style={{
+            fontSize: 30,
+            fontFamily: "outfit-bold",
+            color: Colors.GOLD,
+            textAlign: "center",
+            marginTop: "50%",
+          }}
+        >
+          No Product Found!
+        </Text>
+      )}
     </View>
   );
 }

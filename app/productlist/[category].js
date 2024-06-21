@@ -54,9 +54,9 @@ export default function ProductListByCategory() {
                     size={'large'}
                     color={Colors.PRIMARY}
                 /> : <Text style={{
-                    fontSize: 20,
+                    fontSize: 30,
                     fontFamily: 'outfit-bold',
-                    color: Colors.PRIMARY,
+                    color: Colors.GOLD,
                     textAlign: 'center',
                     marginTop: '50%'
                 }}>No Product Found!</Text>}
