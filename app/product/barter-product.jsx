@@ -63,8 +63,8 @@ export default function BarterProduct() {
     navigation.setOptions({
       headerShown: true,
       headerTitle: "Swapped Product",
-      headerStyle: { backgroundColor: Colors.GRAY },
-      headerTitleStyle: { color: "#fff" },
+      headerStyle: { backgroundColor: Colors.bg },
+      headerTitleStyle: { color: Colors.white },
     });
   }, []);
 
@@ -208,17 +208,6 @@ export default function BarterProduct() {
         padding: 20,
       }}
     >
-      <Text
-        style={{
-          fontFamily: "outfit-bold",
-          color: "#fff",
-          fontSize: 30,
-          marginTop: 10,
-          marginBottom: 20,
-        }}
-      >
-        BarterProduct
-      </Text>
       {barterProductList?.length > 0 && loading == false ? (
         <FlatList
           data={barterProductList}
@@ -249,7 +238,7 @@ export default function BarterProduct() {
                   <Text
                     style={{
                       color: "#fff",
-                      fontSize: 18,
+                      fontSize: 21,
                       fontFamily: "outfit-medium",
                       textAlign: "center",
                     }}
@@ -259,7 +248,7 @@ export default function BarterProduct() {
                   <Image
                     source={{ uri: swappedItem.imageUrl }}
                     style={{
-                      height: 200,
+                      height: 300,
                       width: "100%",
                       borderRadius: 8,
                     }}
@@ -299,13 +288,13 @@ export default function BarterProduct() {
                       style={{
                         paddingVertical: 10,
                         paddingHorizontal: 20,
-                        backgroundColor: "green",
+                        backgroundColor: Colors.green,
                         borderRadius: 8,
                       }}
                     >
                       <Text
                         style={{
-                          color: "#fff",
+                          color: Colors.lightGray,
                           fontFamily: "outfit-medium",
                         }}
                       >
@@ -345,7 +334,7 @@ export default function BarterProduct() {
           style={{
             fontSize: 30,
             fontFamily: "outfit-bold",
-            color: Colors.GOLD,
+            color: Colors.green,
             textAlign: "center",
             marginTop: "50%",
           }}

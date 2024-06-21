@@ -38,8 +38,8 @@ export default function MyProduct() {
     navigation.setOptions({
       headerShown: true,
       headerTitle: "My Product",
-      headerStyle: { backgroundColor: Colors.GRAY },
-      headerTitleStyle: { color: "#fff" },
+      headerStyle: { backgroundColor: Colors.bg },
+      headerTitleStyle: { color: Colors.white },
     });
   }, [user]);
 
@@ -51,16 +51,6 @@ export default function MyProduct() {
         height: "100%",
       }}
     >
-      <Text
-        style={{
-          fontSize: 30,
-          fontFamily: "outfit-bold",
-          color: "#fff",
-        }}
-      >
-        My Products
-      </Text>
-
       {productList?.length > 0 && loading == false ? (
         <FlatList
           refreshing={loading}
@@ -75,7 +65,7 @@ export default function MyProduct() {
           style={{
             fontSize: 30,
             fontFamily: "outfit-bold",
-            color: Colors.GOLD,
+            color: Colors.green,
             textAlign: "center",
             marginTop: "50%",
           }}

@@ -77,6 +77,7 @@ export default function Header() {
         <FontAwesome name="search" size={24} color={Colors.white} />
         <TextInput
           placeholder="Search..."
+          placeholderTextColor="white"
           style={{
             fontFamily: "outfit",
             fontSize: 16,

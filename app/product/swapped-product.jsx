@@ -38,8 +38,8 @@ export default function SwappedProduct() {
     navigation.setOptions({
       headerShown: true,
       headerTitle: "Swapped Product",
-      headerStyle: { backgroundColor: Colors.GRAY },
-      headerTitleStyle: { color: "#fff" },
+      headerStyle: { backgroundColor: Colors.bg },
+      headerTitleStyle: { color: Colors.white },
     });
 
     getUserSwappedProduct();
@@ -53,17 +53,6 @@ export default function SwappedProduct() {
         padding: 20,
       }}
     >
-      <Text
-        style={{
-          marginTop: 20,
-          fontFamily: "outfit-bold",
-          color: "#fff",
-          fontSize: 24,
-          marginBottom: 20,
-        }}
-      >
-        Swapped Product
-      </Text>
       {productList?.length > 0 && loading == false ? (
         <FlatList
           data={productList}
@@ -121,7 +110,7 @@ export default function SwappedProduct() {
           style={{
             fontSize: 30,
             fontFamily: "outfit-bold",
-            color: Colors.GOLD,
+            color: Colors.green,
             textAlign: "center",
             marginTop: "50%",
           }}

@@ -10,44 +10,52 @@ import React from "react";
 import { Colors } from "../../constants/Colors";
 import { useRouter } from "expo-router";
 import { useAuth } from "@clerk/clerk-expo";
+import { MaterialIcons } from "@expo/vector-icons";
+
 export default function MenuList() {
   const Menu = [
     {
       id: 1,
       name: "Add Product",
-      icon: require("./../../assets/images/addProduct.png"),
+      // icon: require("./../../assets/images/addProduct.png"),
+      icon: "add-business",
       path: "/product/add-product/",
     },
     {
       id: 2,
       name: "My Products",
-      icon: require("./../../assets/images/myProduct.png"),
+      // icon: require("./../../assets/images/myProduct.png"),
+      icon: "check-box",
       path: "/product/my-product/",
     },
     {
       id: 3,
       name: "Request Products",
-      icon: require("./../../assets/images/myProduct.png"),
+      // icon: require("./../../assets/images/myProduct.png"),
+      icon: "request-quote",
       path: "/product/barter-product/",
     },
     {
       id: 4,
       name: "Swapped Products",
-      icon: require("./../../assets/images/myProduct.png"),
+      // icon: require("./../../assets/images/myProduct.png"),
+      icon: "swap-horiz",
       path: "/product/swapped-product/",
     },
     {
       id: 5,
       name: "Share App",
-      icon: require("./../../assets/images/share.png"),
+      // icon: require("./../../assets/images/share.png"),
+      icon: "share",
       path: "share",
     },
     {
       id: 6,
       name: "Logout",
-      icon: require("./../../assets/images/logout.png"),
+      // icon: require("./../../assets/images/logout.png"),
+      icon: "logout",
       path: "logout",
-    }
+    },
   ];
 
   const router = useRouter();
@@ -88,13 +96,15 @@ export default function MenuList() {
               backgroundColor: Colors.GRAY,
             }}
           >
-            <Image
+            <MaterialIcons name={item.icon} size={48} color={Colors.green} />
+            {/* <Image
               source={item.icon}
               style={{
                 width: 50,
                 height: 50,
               }}
-            />
+            /> */}
+
             <Text
               style={{
                 fontFamily: "outfit-bold",

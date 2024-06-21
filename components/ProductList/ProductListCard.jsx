@@ -14,13 +14,14 @@ export default function ProductListCard({ product }) {
     <TouchableOpacity
       onPress={() => router.push("/productdetail/" + product.id)}
       style={{
-        padding: 10,
-        margin: 10,
+        paddingVertical: 15,
+        paddingHorizontal: 15,
         borderRadius: 15,
         backgroundColor: Colors.GRAY,
         display: "flex",
         flexDirection: "row",
-        gap: 10,
+        gap: 15,
+        marginBottom: 20
       }}
     >
       <Image
@@ -28,7 +29,7 @@ export default function ProductListCard({ product }) {
         style={{
           width: 120,
           height: 120,
-          borderRadius: 15,
+          borderRadius: 10,
         }}
       />
       <View
@@ -37,23 +38,28 @@ export default function ProductListCard({ product }) {
           gap: 5,
         }}
       >
-        <Text
+        <View
           style={{
             position: "absolute",
             right: 0,
-            backgroundColor: Colors.orange,
+            backgroundColor: Colors.green,
             padding: 3,
-            color: "#fff",
             borderRadius: 5,
           }}
         >
-          {product.condition}
-        </Text>
+          <Text
+            style={{
+              color: Colors.lightGray,
+            }}
+          >
+            {product.condition}
+          </Text>
+        </View>
         <Text
           style={{
             fontFamily: "outfit-bold",
             fontSize: 18,
-            color: Colors.GOLD,
+            color: Colors.orange,
           }}
         >
           {product.name}
@@ -61,15 +67,15 @@ export default function ProductListCard({ product }) {
         <Text
           style={{
             fontFamily: "outfit",
-            color: "#fff",
+            color: Colors.white,
           }}
         >
-          {getFirst10Words(product.about)}
+          About: {getFirst10Words(product.about)}
         </Text>
         <Text
           style={{
             fontFamily: "outfit-medium",
-            color: "#fff",
+            color: Colors.white,
           }}
         >
           Owner: {product.owner}
@@ -77,7 +83,7 @@ export default function ProductListCard({ product }) {
         <Text
           style={{
             fontFamily: "outfit-medium",
-            color: "#fff",
+            color: Colors.white,
           }}
         >
           Required: {product.barterProduct}

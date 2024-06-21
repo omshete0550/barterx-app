@@ -1,7 +1,8 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
-import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../../constants/Colors";
 
 export default function TabLayout() {
@@ -33,7 +34,16 @@ export default function TabLayout() {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="home" size={24} color={color} />
+            <AntDesign name="home" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="category"
+        options={{
+          tabBarLabel: "Category",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="list" size={24} color={color} />
           ),
         }}
       />
@@ -42,7 +52,7 @@ export default function TabLayout() {
         options={{
           tabBarLabel: "Explore",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="search" size={24} color={color} />
+            <AntDesign name="search1" size={24} color={color} />
           ),
         }}
       />
@@ -51,7 +61,7 @@ export default function TabLayout() {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="user" size={24} color={color} />
+            <AntDesign name="user" size={24} color={color} />
           ),
         }}
       />

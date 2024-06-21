@@ -124,8 +124,8 @@ export default function AddProduct() {
     navigation.setOptions({
       headerShown: true,
       headerTitle: "Publish Product",
-      headerStyle: { backgroundColor: Colors.GRAY },
-      headerTitleStyle: { color: "#fff" },
+      headerStyle: { backgroundColor: Colors.bg },
+      headerTitleStyle: { color: Colors.white },
     });
 
     getCategoryList();
@@ -145,10 +145,10 @@ export default function AddProduct() {
         padding: 20,
       }}
     >
-      <Text style={{ color: "#fff", fontSize: 25, fontFamily: "outfit-bold" }}>
+      {/* <Text style={{ color: Colors.white, fontSize: 30, fontFamily: "outfit-bold" }}>
         Publish Product
-      </Text>
-      <Text style={{ color: "#ccc", fontFamily: "outfit" }}>
+      </Text> */}
+      <Text style={{ color: '#ccc', fontFamily: "outfit" }}>
         To start swapping, all you need is a name, required product, and file.
       </Text>
 
@@ -189,7 +189,7 @@ export default function AddProduct() {
             borderRadius: 5,
             marginTop: 10,
             fontFamily: "outfit",
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
           }}
         />
         <TextInput
@@ -203,9 +203,9 @@ export default function AddProduct() {
             color: "white",
             fontSize: 17,
             borderRadius: 5,
-            marginTop: 10,
+            marginTop: 20,
             fontFamily: "outfit",
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
             height: 100,
           }}
         />
@@ -218,19 +218,20 @@ export default function AddProduct() {
             color: "white",
             fontSize: 17,
             borderRadius: 5,
-            marginTop: 10,
+            marginTop: 20,
             fontFamily: "outfit",
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
           }}
         />
 
         <View
           style={{
-            color: "white",
+            color: Colors.white,
             borderRadius: 5,
-            marginTop: 10,
+            marginTop: 20,
             fontFamily: "outfit",
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
+            padding: 10
           }}
         >
           <RNPickerSelect
@@ -243,7 +244,7 @@ export default function AddProduct() {
             placeholder={{
               label: "Select Condition",
               value: null,
-              color: "#9EA0A4",
+              color: Colors.white,
             }}
             style={{
               inputAndroid: { color: "white" },
@@ -255,9 +256,10 @@ export default function AddProduct() {
           style={{
             color: "white",
             borderRadius: 5,
-            marginTop: 10,
+            marginTop: 20,
             fontFamily: "outfit",
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
+            padding: 10
           }}
         >
           <RNPickerSelect
@@ -279,10 +281,10 @@ export default function AddProduct() {
       <View style={{ marginTop: 20 }}>
         <TouchableOpacity
           style={{
-            backgroundColor: Colors.GRAY,
+            backgroundColor: Colors.lightGray,
             padding: 10,
             borderRadius: 5,
-            alignItems: "center",
+            // alignItems: "center",
           }}
           onPress={() => setShowDatePicker(true)}
         >
@@ -305,8 +307,8 @@ export default function AddProduct() {
       <TouchableOpacity
         disabled={loading}
         style={{
-          marginTop: 15,
-          backgroundColor: Colors.orange,
+          marginTop: 30,
+          backgroundColor: Colors.green,
           padding: 15,
           borderRadius: 5,
         }}
@@ -317,10 +319,10 @@ export default function AddProduct() {
         ) : (
           <Text
             style={{
-              color: "#fff",
+              color: Colors.lightGray,
               textAlign: "center",
               fontFamily: "outfit-bold",
-              fontSize: 15,
+              fontSize: 16,
             }}
           >
             Publish Product

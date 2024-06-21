@@ -33,7 +33,9 @@ export default function LoginScreen() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 80,
+        // marginTop: 80,
+        height: '100%',
+        backgroundColor: Colors.GRAY
       }}
     >
       <Image
@@ -69,10 +71,10 @@ export default function LoginScreen() {
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text
             style={{
-              fontFamily: "outfit",
-              color: "#fff",
+              fontFamily: "outfit-bold",
+              color: Colors.white,
               textAlign: "center",
-              fontSize: 17,
+              fontSize: 18,
             }}
           >
             Lets Get Started
@@ -103,16 +105,17 @@ const styles = StyleSheet.create({
     fontFamily: "outfit-bold",
     textAlign: "center",
     marginTop: 20,
+    color: Colors.white
   },
   desc: {
     fontSize: 15,
     fontFamily: "outfit",
     textAlign: "center",
     marginVertical: 15,
-    color: Colors.GRAY,
+    color: Colors.white,
   },
   button: {
-    backgroundColor: Colors.orange,
+    backgroundColor: Colors.blue,
     padding: 16,
     display: "flex",
     borderRadius: 99,

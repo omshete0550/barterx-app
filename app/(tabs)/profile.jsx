@@ -8,16 +8,18 @@ export default function profile() {
   return (
     <View
       style={{
-        padding: 20,
         backgroundColor: Colors.bg,
-        height: '100%'
+        height: "100%",
+        padding: 20,
       }}
     >
       <Text
         style={{
           fontFamily: "outfit-bold",
           fontSize: 30,
-          color: '#fff'
+          textAlign: "center",
+          color: "#fff",
+          paddingTop: 50,
         }}
       >
         Profile
