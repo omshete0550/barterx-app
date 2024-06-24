@@ -53,7 +53,7 @@ export default function Header() {
         </View>
 
         <Image
-          source={require('../../assets/images/logo.png')}
+          source={require('../../assets/images/logo_new.png')}
           style={{
             width: 150,
             height: 45,

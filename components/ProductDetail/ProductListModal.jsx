@@ -95,12 +95,12 @@ const ProductListModal = ({
           <Text
             style={{
               fontFamily: "outfit-bold",
-              color: "#fff",
+              color: Colors.white,
               fontSize: 20,
-              marginBottom: 10,
+              marginBottom: 20,
             }}
           >
-            Your Products
+            Which Product you want to barter
           </Text>
           <FlatList
             data={products}
@@ -109,7 +109,7 @@ const ProductListModal = ({
             contentContainerStyle={styles.flatListContainer}
           />
           <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-            <AntDesign name="closecircle" size={28} color={Colors.orange} />
+            <AntDesign name="closecircle" size={28} color={Colors.green} />
           </TouchableOpacity>
         </View>
       </View>

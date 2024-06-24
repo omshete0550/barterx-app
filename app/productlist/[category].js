@@ -40,6 +40,7 @@ export default function ProductListByCategory() {
         <View style={{
             backgroundColor: Colors.bg,
             height: '100%',
+            paddingTop: 20
         }}>
             {productList?.length > 0 && loadings == false ? <FlatList
                 data={productList}

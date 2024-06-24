@@ -69,7 +69,7 @@ export default function ActionButton({ product }) {
                 borderRadius: 99
               }}
             />
-            <Text style={{ fontFamily: "outfit-medium", textAlign: "center", color: '#fff', marginTop: 5 }}>
+            <Text style={{ fontFamily: "outfit-medium", textAlign: "center", color: Colors.white, marginTop: 5 }}>
               {item.name}
             </Text>
           </TouchableOpacity>

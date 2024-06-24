@@ -62,7 +62,7 @@ export default function Category({ explore, onCategorySelect }) {
 
       <FlatList
         data={categoryList}
-        style={{ marginLeft: 20 }}
+        style={{ marginVertical: 10, marginHorizontal: 20 }}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         renderItem={({ item, index }) => (

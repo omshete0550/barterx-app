@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Colors } from "../../constants/Colors";
 
-export default function category() {
+export default function order() {
   return (
     <View
       style={{
@@ -22,7 +22,7 @@ export default function category() {
           paddingTop: 50,
         }}
       >
-        Category
+        Notifications
       </Text>
       <Text
         style={{
@@ -30,7 +30,7 @@ export default function category() {
           fontFamily: "outfit-bold",
           fontSize: 50,
           textAlign: "center",
-          marginTop: "50%",
+          marginTop: '50%'
         }}
       >
         Coming Soon!

@@ -38,14 +38,13 @@ export default function Reviews({ product }) {
     <View
       style={{
         padding: 20,
-        // backgroundColor: "#fff",
       }}
     >
       <Text
         style={{
           fontFamily: "outfit-bold",
           fontSize: 20,
-          color: "#fff",
+          color: Colors.white
         }}
       >
         Reviews
@@ -55,28 +54,29 @@ export default function Reviews({ product }) {
         <Rating
           showRating={false}
           onFinishRating={(rating) => setRating(rating)}
-          style={{ paddingVertical: 10 }}
+          style={{ paddingVertical: 15 }}
           imageSize={20}
         />
         <TextInput
           numberOfLines={4}
           onChangeText={(value) => setUserInput(value)}
           placeholder="Write your comments...."
+          placeholderTextColor={Colors.white}
           style={{
             padding: 15,
             borderWidth: 1,
             borderRadius: 10,
             borderColor: Colors.GRAY,
             textAlignVertical: "top",
-            color: "#fff",
+            color: Colors.white
           }}
         />
 
         <TouchableOpacity
           disabled={!userInput}
           style={{
-            marginTop: 10,
-            backgroundColor: Colors.orange,
+            marginTop: 15,
+            backgroundColor: Colors.green,
             padding: 10,
             borderRadius: 6,
           }}
@@ -86,7 +86,7 @@ export default function Reviews({ product }) {
             style={{
               fontFamily: "outfit",
               textAlign: "center",
-              color: "#fff",
+              color: Colors.lightGray,
             }}
           >
             Submit
@@ -102,7 +102,7 @@ export default function Reviews({ product }) {
               flexDirection: "row",
               gap: 10,
               alignItems: "center",
-              marginTop: 10,
+              marginTop: 30,
               borderWidth: 1,
               borderColor: Colors.GRAY,
               padding: 10,
@@ -136,7 +136,7 @@ export default function Reviews({ product }) {
                 ratingCount={item.rating}
                 style={{ alignItems: "flex-start" }}
               />
-              <Text style={{ color: "#fff" }}>{item.comment}</Text>
+              <Text style={{ color: Colors.white }}>{item.comment}</Text>
             </View>
           </View>
         ))}

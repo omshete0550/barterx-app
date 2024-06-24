@@ -64,8 +64,8 @@ export default function ProductDetail() {
                             style={{
                                 fontFamily: "outfit-bold",
                                 fontSize: 20,
-                                color: "#fff",
-                                marginBottom: 10
+                                color: Colors.white,
+                                marginBottom: 20
                             }}
                         >
                             Barter Product

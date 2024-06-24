@@ -4,10 +4,12 @@ import * as WebBrowser from "expo-web-browser";
 import { useOAuth } from "@clerk/clerk-expo";
 import { useWarmUpBrowser } from "../hooks/useWarmUpBrowser";
 import { Colors } from "@/constants/Colors";
+import { useRouter } from "expo-router";
 
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
+  const router = useRouter();
   useWarmUpBrowser();
 
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
@@ -39,7 +41,7 @@ export default function LoginScreen() {
       }}
     >
       <Image
-        source={require("../assets/images/logo.png")}
+        source={require("../assets/images/logo_new.png")}
         style={styles.logoImage}
       />
 
@@ -53,7 +55,7 @@ export default function LoginScreen() {
           Your Ultimate{" "}
           <Text
             style={{
-              color: Colors.blue,
+              color: Colors.green,
             }}
           >
             {" "}
@@ -72,12 +74,12 @@ export default function LoginScreen() {
           <Text
             style={{
               fontFamily: "outfit-bold",
-              color: Colors.white,
+              color: Colors.lightGray,
               textAlign: "center",
               fontSize: 18,
             }}
           >
-            Lets Get Started
+            Login
           </Text>
         </TouchableOpacity>
       </View>
@@ -87,8 +89,8 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   logoImage: {
-    width: 200,
-    height: 40,
+    width: 250,
+    height: 75,
     objectFit: "contain",
   },
   bgImage: {
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   button: {
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.green,
     padding: 16,
     display: "flex",
     borderRadius: 99,

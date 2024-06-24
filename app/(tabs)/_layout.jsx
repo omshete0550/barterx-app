@@ -47,12 +47,22 @@ export default function TabLayout() {
           ),
         }}
       />
+      
       <Tabs.Screen
         name="explore"
         options={{
           tabBarLabel: "Explore",
           tabBarIcon: ({ color }) => (
             <AntDesign name="search1" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="order"
+        options={{
+          tabBarLabel: "Notifications",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="notifications" size={24} color={color} />
           ),
         }}
       />

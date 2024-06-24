@@ -49,8 +49,6 @@ export default function About({ product }) {
     <View
       style={{
         padding: 20,
-        // backgroundColor: "#FFFFFF",
-        // height: "100%",
       }}
     >
       <Text
@@ -108,7 +106,7 @@ export default function About({ product }) {
           <TouchableOpacity
             onPress={handleBarterNow}
             style={{
-              backgroundColor: Colors.orange,
+              backgroundColor: Colors.green,
               paddingVertical: 10,
               paddingHorizontal: 20,
               borderRadius: 5,
@@ -117,7 +115,7 @@ export default function About({ product }) {
             <Text
               style={{
                 fontFamily: "outfit-medium",
-                color: "#fff",
+                color: Colors.lightGray,
               }}
             >
               Barter Now

@@ -1,11 +1,12 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { FontAwesome } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "../../constants/Colors";
 import Category from "../../components/Home/Category";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../configs/FirebaseConfig";
 import ExploreProduct from "../../components/Explore/ExploreProduct";
+import * as ImagePicker from "expo-image-picker";
 
 export default function explore() {
   const [productList, setProductList] = useState([]);
@@ -22,6 +23,24 @@ export default function explore() {
       setProductList((prev) => [...prev, { id: doc.id, ...doc.data() }]);
     });
   };
+
+  const openImagePickerAsync = async () => {
+    let permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("Permission to access gallery is required!");
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    if (!pickerResult.canceled) {
+      console.log(pickerResult);
+      // You can handle the picked image here
+      // For example, you can upload it to your server
+    }
+  };
+
   return (
     <View
       style={{
@@ -36,6 +55,7 @@ export default function explore() {
           fontSize: 30,
           marginTop: 30,
           color: "#fff",
+          textAlign: "center",
         }}
       >
         Explore More
@@ -45,23 +65,34 @@ export default function explore() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          gap: 10,
+          justifyContent: "space-between",
           padding: 10,
-          backgroundColor: "#fff",
-          marginVertical: 10,
-          marginTop: 15,
+          backgroundColor: Colors.GRAY,
+          marginVertical: 20,
           borderRadius: 8,
-          marginBottom: 30,
         }}
       >
-        <FontAwesome name="search" size={24} color={Colors.PRIMARY} />
-        <TextInput
-          placeholder="Search..."
+        <View
           style={{
-            fontFamily: "outfit",
-            fontSize: 16,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 10,
           }}
-        />
+        >
+          <AntDesign name="search1" size={24} color={Colors.green} />
+          <TextInput
+            placeholder="Search..."
+            placeholderTextColor={Colors.white}
+            style={{
+              fontFamily: "outfit",
+              fontSize: 16,
+            }}
+          />
+        </View>
+        <TouchableOpacity onPress={openImagePickerAsync}>
+          <AntDesign name="camera" size={24} color={Colors.green} />
+        </TouchableOpacity>
       </View>
       {/* Category */}
       <Category

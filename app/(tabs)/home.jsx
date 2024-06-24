@@ -6,6 +6,7 @@ import Category from "../../components/Home/Category";
 import CommunityStats from "../../components/Home/CommunityStats";
 import ProductCard from "../../components/Home/ProductCard";
 import { Colors } from "../../constants/Colors";
+import Services from "../../components/Home/Services";
 
 export default function home() {
   return (
@@ -26,11 +27,16 @@ export default function home() {
       {/* Popular List Card */}
       <ProductCard />
 
+      {/* Services */}
+      <Services />
+
+      {/* Popular List Card */}
+      <ProductCard />
+
       {/* Community Stats */}
       <CommunityStats />
 
-      {/* Category */}
-      <Category />
+      <View style={{ height: 100 }}></View>
     </ScrollView>
   );
 }

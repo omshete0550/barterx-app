@@ -1,6 +1,7 @@
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
+import Landing from "../components/Landing";
 import LoginScreen from "../components/LoginScreen";
 import * as SecureStore from "expo-secure-store";
 

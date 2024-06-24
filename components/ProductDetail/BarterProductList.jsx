@@ -53,7 +53,7 @@ const BarterProductList = () => {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      text: "white",
+      text: Colors.white,
     },
   };
 
@@ -68,11 +68,11 @@ const BarterProductList = () => {
         }}
       >
         <DataTable.Header
-          style={{ borderBottomColor: "white", borderBottomWidth: 1 }}
+          style={{ borderBottomColor: Colors.white, borderBottomWidth: 1 }}
         >
           <DataTable.Title
             textStyle={{
-              color: Colors.GOLD,
+              color: Colors.orange,
               fontFamily: "outfit-bold",
               fontSize: 16,
             }}
@@ -81,7 +81,7 @@ const BarterProductList = () => {
           </DataTable.Title>
           <DataTable.Title
             textStyle={{
-              color: Colors.GOLD,
+              color: Colors.orange,
               fontFamily: "outfit-bold",
               fontSize: 16,
             }}
@@ -91,7 +91,7 @@ const BarterProductList = () => {
           </DataTable.Title>
           <DataTable.Title
             textStyle={{
-              color: Colors.GOLD,
+              color: Colors.orange,
               fontFamily: "outfit-bold",
               fontSize: 16,
             }}
@@ -99,39 +99,26 @@ const BarterProductList = () => {
           >
             Item
           </DataTable.Title>
-          {/* <DataTable.Title
-            textStyle={{
-              color: Colors.GOLD,
-              fontFamily: "outfit-bold",
-              fontSize: 16,
-            }}
-            numeric
-          >
-            Price
-          </DataTable.Title> */}
         </DataTable.Header>
 
         {items.slice(from, to).map((item) => (
           <DataTable.Row
             key={item.key}
             style={{
-              borderBottomColor: "#fff",
+              borderBottomColor: Colors.white,
               borderBottomWidth: 1,
               //   borderRadius: 10,
             }}
           >
-            <DataTable.Cell textStyle={{ color: "#fff" }}>
+            <DataTable.Cell textStyle={{ color: Colors.white }}>
               {item.date}
             </DataTable.Cell>
-            <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
+            <DataTable.Cell textStyle={{ color: Colors.white }} numeric>
               {item.user}
             </DataTable.Cell>
-            <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
+            <DataTable.Cell textStyle={{ color: Colors.white }} numeric>
               {item.item}
             </DataTable.Cell>
-            {/* <DataTable.Cell textStyle={{ color: "#fff" }} numeric>
-              {item.price}
-            </DataTable.Cell> */}
           </DataTable.Row>
         ))}
 
@@ -159,7 +146,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.GRAY,
   },
   pagination: {
-    color: "white",
+    color: Colors.white,
   },
 });
 

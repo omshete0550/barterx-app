@@ -56,9 +56,9 @@ export default function Intro({ product }) {
         }}
       >
         <TouchableOpacity onPress={() => router.back()}>
-          <Ionicons name="arrow-back-circle" size={40} color="white" />
+          <Ionicons name="arrow-back-circle" size={40} color={Colors.lightGray} />
         </TouchableOpacity>
-        <Ionicons name="heart" size={40} color="white" />
+        <Ionicons name="heart" size={40} color={Colors.lightGray} />
       </View>
       <Image
         source={{ uri: product?.imageUrl }}
@@ -90,7 +90,7 @@ export default function Intro({ product }) {
               style={{
                 fontSize: 26,
                 fontFamily: "outfit-bold",
-                color: Colors.GOLD,
+                color: Colors.orange,
               }}
             >
               {product?.name}
@@ -101,7 +101,7 @@ export default function Intro({ product }) {
                 fontSize: 15,
                 marginTop: 5,
                 fontFamily: "outfit",
-                color: "#fff",
+                color: Colors.white,
               }}
             >
               Onwer: {product?.owner}
@@ -111,7 +111,7 @@ export default function Intro({ product }) {
                 fontSize: 15,
                 marginTop: 5,
                 fontFamily: "outfit",
-                color: "#fff",
+                color: Colors.white,
               }}
             >
               Required: {product?.barterProduct}
@@ -124,7 +124,7 @@ export default function Intro({ product }) {
               style={{
                 width: 45,
                 height: 45,
-                backgroundColor: "#f2f2f3",
+                backgroundColor: Colors.GRAY,
                 borderRadius: 99,
                 display: "flex",
                 alignItems: "center",

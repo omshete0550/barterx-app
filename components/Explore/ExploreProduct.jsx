@@ -8,7 +8,6 @@ export default function ExploreProduct({ productList }) {
       <FlatList
         data={productList}
         scrollEnabled
-        // showsVerticalScrollIndicator={false}
         renderItem={({ item, index }) => (
           <ProductListCard product={item} key={index} />
         )}

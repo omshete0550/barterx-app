@@ -21,7 +21,7 @@ export default function ProductListCard({ product }) {
         display: "flex",
         flexDirection: "row",
         gap: 15,
-        marginBottom: 20
+        marginBottom: 20,
       }}
     >
       <Image

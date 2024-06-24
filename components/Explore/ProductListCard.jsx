@@ -9,6 +9,8 @@ export default function ProductListCard({ product }) {
     return words.slice(0, 10).join(" ") + (words.length > 10 ? "..." : "");
   };
 
+  console.log(product);
+
   const router = useRouter();
   return (
     <TouchableOpacity
@@ -17,8 +19,24 @@ export default function ProductListCard({ product }) {
         backgroundColor: Colors.GRAY,
         borderRadius: 15,
         marginTop: 15,
+        // width: '50%',
+        position: 'relative',
       }}
     >
+      <View style={{
+        position: 'absolute',
+        right: 0,
+        backgroundColor: Colors.green,
+        zIndex: 1,
+        padding: 7,
+        borderTopRightRadius: 15,
+        borderBottomLeftRadius: 5
+      }}>
+        <Text style={{
+          color: Colors.lightGray,
+          textTransform: 'capitalize'
+        }}>{product?.condition}</Text>
+      </View>
       <Image
         source={{ uri: product?.imageUrl }}
         style={{
