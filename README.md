@@ -1,50 +1,190 @@
-# Welcome to your Expo app 👋
+# BarterX
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<br/>
 
-## Get started
+<p align="center">
+  <img src="./assets/images/logo_new.png" width="20%" />
+</p>
 
-1. Install dependencies
+<p align="center">
+  Innovating Exchange, Igniting Trade.
+  <br />
+  <br />
+  <a href="#table-of-contents"><b>Explore the docs »</b></a>
+  <br />
+  <br />
+  <a href="#architecture-and-design">Architecture</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="#demonstration">Features</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="#contributing">Local Setup</a>
+  <br />
+</p>
 
-   ```bash
-   npm install
-   ```
+## Table Of Contents
 
-2. Start the app
+- [About the Project](#about-the-project)
+- [Architecture](#architecture)
+- [Demonstration & Features](#demonstration)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
 
-   ```bash
-    npx expo start
-   ```
+## About The Project
 
-In the output, you'll find options to open the app in a
+Traditional commerce lacks sustainable alternatives, leading to excessive unnecessary consumption and waste. Our society needs an innovative and sustainable solution/platform to empower individuals to exchange goods or items, promoting a more eco-friendly, community-oriented, conscious and responsible lifestyle.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Objectives:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- The primary objective of BarterX is to provide a user-friendly platform that facilitates meaningful exchanges of goods and services.
+- Encourage users to swap items they no longer need, promoting a culture of sustainability and reducing unnecessary waste.
+- Encourage regular engagement through features like one to one chats, and user proposals.
+- Who says you need to know all the trends by name to shop? If you see something you like, take a picture, upload and start trading.
 
-## Get a fresh project
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
 
-When you're ready, run:
+A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-```bash
-npm run reset-project
+## Architecture
+
+The architecture and workflow was built using smartdraw.
+
+<img src="./client/src/assets/architecture.png" alt="architecture">
+
+## Demonstration
+
+  <img src="./assets/demo/IMG-20240804-WA0017.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0016.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0015.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0014.jpg" />
+  <img src="./assets/demo//IMG-20240804-WA0020.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0018.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0019.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0022.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0023.jpg" />
+  <img src="./assets/demo/IMG-20240804-WA0021.jpg" />
+### Technologies Used
+
+- Workflow and Architecture Design
+  - SmartDraw
+- Frontend
+  - React.js
+  - CSS
+- Backend
+  - Node.js (Express.js)
+  - MongoDB
+- Machine Learning
+  - pickle
+  - Tensorflow_hub
+  - Flask
+  - sklearn
+
+<br />
+
+## Contributing
+
+**Local Setup || Project Structure**
+
+NOTE: Individual instructions can be found in respective directories.
+
+- The project contains 4 broad directories.
+
+```
+*
+├───client
+├───server
+└───flask
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- `client`: The frontend for the application.
+- `extension`: Chrome/Edge extension to keep a track of browser tabs.
+- `model`: Model APIs for Machine Learning.
+- `server`: The backend for the application.
 
-## Learn more
+<br />
 
-To learn more about developing your project with Expo, look at the following resources:
+**Client**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+For local setup of frontend:
 
-## Join the community
+- `cd client`
+- `npm i`
+- `npm start`
+- Go to `localhost:3000`
 
-Join our community of developers creating universal apps.
+Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+src
+├───assets
+├───Components
+├───Pages
+├───App.js
+└───index.js
+```
+
+Individual Component & Pages Structure
+
+```
+component
+├───component.jsx
+└───component.css
+```
+
+```
+Pages
+├───page.jsx
+└───page.css
+```
+
+<br />
+<br />
+
+**Server**
+
+For local setup of backend:
+
+- `cd server`
+- `npm i`
+- `npm start`
+
+```
+server
+├───models
+├───index.js
+└───package.json
+```
+
+<br />
+<br />
+
+**Flask**
+
+For local setup of flask:
+
+- `cd flask`
+- `npm i`
+- `python embeddings_calc.py`
+
+```
+flask
+├───data
+└───embeddings_calc.py
+```
+
+<br />
+<br />
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/MohibSayed/BarterX/blob/main/LICENSE.md) for more information.
+
+## Authors
+
+- Om Shete
+  - [LinkedIn](https://www.linkedin.com/in/om-shete-25748522a/)
+- Mohib Abbas Sayed
+  - [LinkedIn](https://www.linkedin.com/in/mohib-abbas-sayed-83837422a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- Hamza Sayyed
+  - [LinkedIn](https://shorturl.at/hjAEI)
