@@ -46,21 +46,27 @@ Of course, no one template will serve all projects since your needs may be diffe
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 
-## Demonstration
+<p style="display: flex; flex-wrap: wrap; gap: 1em;"> 
+   <img src="./assets/demo/IMG-20240804-WA0017.jpg" width="45%" height="45%" style="margin: 10px;" />
+   <img src="./assets/demo/IMG-20240804-WA0016.jpg" width="45%" height="45%" style="margin: 10px;" />
+</p>
 
-   <p style="display: flex"> 
-      <img src="./assets/demo/IMG-20240804-WA0017.jpg" width="50%" height="50%" />
-      <img src="./assets/demo/IMG-20240804-WA0016.jpg" width="50%" height="50%" />
-   </p>
-  
-  <img src="./assets/demo/IMG-20240804-WA0015.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0014.jpg" width="50%" height="50%" />
-  <img src="./assets/demo//IMG-20240804-WA0020.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0018.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0019.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0022.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0023.jpg" width="50%" height="50%" />
-  <img src="./assets/demo/IMG-20240804-WA0021.jpg" width="50%" height="50%" />
+<p style="display: flex; flex-wrap: wrap; gap: 1em;"> 
+   <img src="./assets/demo/IMG-20240804-WA0015.jpg" width="45%" height="45%" style="margin: 10px;" />
+   <img src="./assets/demo/IMG-20240804-WA0014.jpg" width="45%" height="45%" style="margin: 10px;" />
+</p>
+
+<p style="display: flex; flex-wrap: wrap; gap: 1em;"> 
+   <img src="./assets/demo/IMG-20240804-WA0020.jpg" width="45%" height="45%" style="margin: 10px;" />
+   <img src="./assets/demo/IMG-20240804-WA0018.jpg" width="45%" height="45%" style="margin: 10px;" />
+</p>
+
+<p style="display: flex; flex-wrap: wrap; gap: 1em;"> 
+   <img src="./assets/demo/IMG-20240804-WA0019.jpg" width="45%" height="45%" style="margin: 10px;" />
+   <img src="./assets/demo/IMG-20240804-WA0022.jpg" width="45%" height="45%" style="margin: 10px;" />
+</p>
+
+
 ### Technologies Used
 
 - Frontend
