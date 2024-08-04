@@ -24,10 +24,9 @@
 ## Table Of Contents
 
 - [About the Project](#about-the-project)
-- [Architecture](#architecture)
 - [Demonstration & Features](#demonstration)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+<!-- - [Contributing](#contributing) -->
 - [License](#license)
 - [Authors](#authors)
 
@@ -46,135 +45,32 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-## Architecture
-
-The architecture and workflow was built using smartdraw.
-
-<img src="./client/src/assets/architecture.png" alt="architecture">
 
 ## Demonstration
 
-  <img src="./assets/demo/IMG-20240804-WA0017.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0016.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0015.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0014.jpg" />
-  <img src="./assets/demo//IMG-20240804-WA0020.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0018.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0019.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0022.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0023.jpg" />
-  <img src="./assets/demo/IMG-20240804-WA0021.jpg" />
+   <p align="center"> 
+      <img src="./assets/demo/IMG-20240804-WA0017.jpg" width="50%" height="50%" />
+      <img src="./assets/demo/IMG-20240804-WA0016.jpg" width="50%" height="50%" />
+   </p>
+  
+  <img src="./assets/demo/IMG-20240804-WA0015.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0014.jpg" width="50%" height="50%" />
+  <img src="./assets/demo//IMG-20240804-WA0020.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0018.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0019.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0022.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0023.jpg" width="50%" height="50%" />
+  <img src="./assets/demo/IMG-20240804-WA0021.jpg" width="50%" height="50%" />
 ### Technologies Used
 
-- Workflow and Architecture Design
-  - SmartDraw
 - Frontend
-  - React.js
+  - React-Native
   - CSS
 - Backend
-  - Node.js (Express.js)
-  - MongoDB
-- Machine Learning
-  - pickle
-  - Tensorflow_hub
-  - Flask
-  - sklearn
+  - Firebase
 
 <br />
 
-## Contributing
-
-**Local Setup || Project Structure**
-
-NOTE: Individual instructions can be found in respective directories.
-
-- The project contains 4 broad directories.
-
-```
-*
-├───client
-├───server
-└───flask
-```
-
-- `client`: The frontend for the application.
-- `extension`: Chrome/Edge extension to keep a track of browser tabs.
-- `model`: Model APIs for Machine Learning.
-- `server`: The backend for the application.
-
-<br />
-
-**Client**
-
-For local setup of frontend:
-
-- `cd client`
-- `npm i`
-- `npm start`
-- Go to `localhost:3000`
-
-Structure
-
-```
-src
-├───assets
-├───Components
-├───Pages
-├───App.js
-└───index.js
-```
-
-Individual Component & Pages Structure
-
-```
-component
-├───component.jsx
-└───component.css
-```
-
-```
-Pages
-├───page.jsx
-└───page.css
-```
-
-<br />
-<br />
-
-**Server**
-
-For local setup of backend:
-
-- `cd server`
-- `npm i`
-- `npm start`
-
-```
-server
-├───models
-├───index.js
-└───package.json
-```
-
-<br />
-<br />
-
-**Flask**
-
-For local setup of flask:
-
-- `cd flask`
-- `npm i`
-- `python embeddings_calc.py`
-
-```
-flask
-├───data
-└───embeddings_calc.py
-```
-
-<br />
-<br />
 
 ## License
 
