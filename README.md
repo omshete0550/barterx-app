@@ -48,7 +48,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ## Demonstration
 
-   <p align="center"> 
+   <p style="display: flex"> 
       <img src="./assets/demo/IMG-20240804-WA0017.jpg" width="50%" height="50%" />
       <img src="./assets/demo/IMG-20240804-WA0016.jpg" width="50%" height="50%" />
    </p>
